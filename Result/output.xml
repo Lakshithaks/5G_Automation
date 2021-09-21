@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210921 17:46:54.630" rpa="false" schemaversion="2">
+<suite id="s1" name="RACH testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\RACH_testsuite.robot">
+<test id="s1-t1" name="TC_attach_1.0: UL synchronization">
+<kw name="Copying Reqfile To Gnb" library="Attach_Keyword">
+<kw name="Copy Req" library="attach_function">
+<msg timestamp="20210921 17:46:55.128" level="INFO">Successfully copied Request.txt to gNB folder</msg>
+<status status="PASS" starttime="20210921 17:46:55.121" endtime="20210921 17:46:55.128"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.120" endtime="20210921 17:46:55.129"/>
+</kw>
+<kw name="Request Validation" library="Attach_Keyword">
+<kw name="Req Val" library="attach_function">
+<msg timestamp="20210921 17:46:55.160" level="INFO">Random access preamble message - msg1 UE identification msg report - msg3 Found In Request File</msg>
+<status status="PASS" starttime="20210921 17:46:55.155" endtime="20210921 17:46:55.160"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.154" endtime="20210921 17:46:55.161"/>
+</kw>
+<kw name="Copying Resfile To Ue" library="Attach_Keyword">
+<kw name="Copy Res" library="attach_function">
+<msg timestamp="20210921 17:46:55.172" level="INFO">Successfully copied Response.txt to UE folder</msg>
+<status status="PASS" starttime="20210921 17:46:55.163" endtime="20210921 17:46:55.172"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.162" endtime="20210921 17:46:55.172"/>
+</kw>
+<kw name="Response Validation" library="Attach_Keyword">
+<kw name="Res Val" library="attach_function">
+<msg timestamp="20210921 17:46:55.178" level="INFO">Random access response report - msg2
+ Contention resolution message report - msg4 Found In Response File</msg>
+<status status="PASS" starttime="20210921 17:46:55.174" endtime="20210921 17:46:55.179"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.173" endtime="20210921 17:46:55.179"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.118" endtime="20210921 17:46:55.180"/>
+</test>
+<test id="s1-t2" name="TC_attach_1.0: Delete messages">
+<kw name="Deleting Printed Messages" library="Attach_Keyword">
+<kw name="Delete" library="attach_function">
+<msg timestamp="20210921 17:46:55.195" level="INFO">Messages has been successfully deleted</msg>
+<status status="PASS" starttime="20210921 17:46:55.184" endtime="20210921 17:46:55.196"/>
+</kw>
+<status status="PASS" starttime="20210921 17:46:55.183" endtime="20210921 17:46:55.196"/>
+</kw>
+<kw name="Request Validation" library="Attach_Keyword">
+<kw name="Req Val" library="attach_function">
+<msg timestamp="20210921 17:46:55.244" level="FAIL">messages not found</msg>
+<status status="FAIL" starttime="20210921 17:46:55.197" endtime="20210921 17:46:55.244"/>
+</kw>
+<status status="FAIL" starttime="20210921 17:46:55.197" endtime="20210921 17:46:55.246"/>
+</kw>
+<kw name="Response Validation" library="Attach_Keyword">
+<status status="NOT RUN" starttime="20210921 17:46:55.247" endtime="20210921 17:46:55.248"/>
+</kw>
+<status status="FAIL" starttime="20210921 17:46:55.182" endtime="20210921 17:46:55.249">messages not found</status>
+</test>
+<status status="FAIL" starttime="20210921 17:46:54.640" endtime="20210921 17:46:55.251"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="RACH testsuite">RACH testsuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
