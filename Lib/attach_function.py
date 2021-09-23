@@ -1,7 +1,7 @@
 import os
 import time
 import sys
-sys.path.append("/Variablefile")
+sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\Variablefile")
 import config_file
 import shutil
 
@@ -38,11 +38,11 @@ class attach_function:
 
                         print("Locker Folder has been Successfully Unlocked")
 
-                        sys.exit()
+                        break
 
                 else:
                     print("wrong password! Try again later")
-                    break
+            break
     def copy_req(self):
 
         # path
@@ -58,7 +58,8 @@ class attach_function:
         dest = shutil.move(source, destination)
         print("Successfully copied Request.txt to gNB folder")
 
-    def req_val(self):
+
+    def rach_req_val(self):
         string1 = config_file.message_1
         string3 = config_file.message_3
 
@@ -71,6 +72,25 @@ class attach_function:
         # checking condition for string found or not
         if string1 in readfile and string3 in readfile:
             print(string1, string3, 'Found In Request File')
+
+        else:
+            raise Exception("messages not found")
+
+            # closing a file
+        file1.close()
+
+    def eps_req_val(self):
+        string5 = config_file.message_5
+
+        # opening a text file
+        file1 = open(config_file.path3, "r")
+
+        # read file content
+        readfile = file1.read()
+
+        # checking condition for string found or not
+        if string5 in readfile:
+            print(string5, 'Found In Response File')
 
         else:
             raise Exception("messages not found")
@@ -93,7 +113,7 @@ class attach_function:
         dest1 = shutil.move(source1, destination1)
         print("Successfully copied Response.txt to UE folder")
 
-    def res_val(self):
+    def rach_res_val(self):
         string2 = config_file.message_2
         string4 = config_file.message_4
 
@@ -113,13 +133,32 @@ class attach_function:
             # closing a file
         file2.close()
 
+    def eps_res_val(self):
+        string6 = config_file.message_6
+
+        # opening a text file
+        file2 = open(config_file.path4, "r")
+
+        # read file content
+        readfile = file2.read()
+
+        # checking condition for string found or not
+        if string6 in readfile:
+            print(string6, 'Found In Response File')
+
+        else:
+            raise Exception("messages not found")
+
+            # closing a file
+        file2.close()
+
     def delete(self):
 
-        f1 = open('C:\AUTOMATION\Locker\GNB\Request.txt', 'r')
-        f2 = open('C:\AUTOMATION\Locker\-UE\Response.txt', 'r')
+        f1 = open(config_file.path3, 'r')
+        f2 = open(config_file.path4, 'r')
 
-        a = ['Random access preamble message - msg1', 'UE identification msg report - msg3']
-        b = ['Random access response report - msg2', 'Contention resolution message report - msg4']
+        a = [config_file.message_1, config_file.message_3, config_file.message_5]
+        b = [config_file.message_2, config_file.message_4, config_file.message_6]
         lst = []
         for line in f1 and f2:
             for word in a and b:
@@ -128,8 +167,8 @@ class attach_function:
             lst.append(line)
         f1.close()
         f2.close()
-        f1 = open('C:\AUTOMATION\Locker\GNB\Request.txt', 'w')
-        f2 = open('C:\AUTOMATION\Locker\-UE\Response.txt', 'w')
+        f1 = open(config_file.path3, 'w')
+        f2 = open(config_file.path4, 'w')
         for line in lst:
             f1.write(line)
             f2.write(line)
@@ -167,3 +206,13 @@ class attach_function:
             else:
                 print("wrong password! Try again later")
                 break
+
+
+# class_instance=attach_function()
+# class_instance.unlock()
+# class_instance.copy_req()
+# class_instance.req_val()
+# class_instance.copy_res()
+# class_instance.res_val()
+# class_instance.delete()
+# class_instance.lock()
