@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210930 11:19:50.655" rpa="false" schemaversion="2">
+<suite id="s1" name="RACH Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\RACH_Testsuite.robot">
+<test id="s1-t1" name="TC_attach_1.14: SRB1 setup procedure">
+<kw name="Moving Source Files To Destination Folder" library="attach_keyword">
+<kw name="Copy Gnb Ue" library="attach_function">
+<msg timestamp="20210930 11:19:50.818" level="INFO">Successfully moved the file</msg>
+<status status="PASS" starttime="20210930 11:19:50.814" endtime="20210930 11:19:50.818"/>
+</kw>
+<status status="PASS" starttime="20210930 11:19:50.813" endtime="20210930 11:19:50.818"/>
+</kw>
+<kw name="SRB1 Validation" library="attach_keyword">
+<kw name="Srb Val" library="attach_function">
+<msg timestamp="20210930 11:19:50.820" level="INFO">RRCSetupRequest:establishmentCause-highPriorityAccess
+ RRCConnectionSetupComplete Found In File
+RRCConnectionSetup Found In File</msg>
+<status status="PASS" starttime="20210930 11:19:50.819" endtime="20210930 11:19:50.820"/>
+</kw>
+<status status="PASS" starttime="20210930 11:19:50.818" endtime="20210930 11:19:50.820"/>
+</kw>
+<status status="PASS" starttime="20210930 11:19:50.812" endtime="20210930 11:19:50.821"/>
+</test>
+<status status="PASS" starttime="20210930 11:19:50.673" endtime="20210930 11:19:50.824"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RACH Testsuite">RACH Testsuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

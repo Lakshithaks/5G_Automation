@@ -1,0 +1,48 @@
+message_1 = "Random access preamble message - msg1"
+message_2 = "Random access response report - msg2\n"
+message_3 = "UE identification msg report - msg3"
+message_4 = "Contention resolution message report - msg4"
+message_5 = "Attach Request:EPS attach type(IE)- Combined EPS/IMSI Attach"
+message_6 = "Attach accept:EPS attach Result(IE)- Combined EPS/IMSI Attach"
+message_7 = "PDN connectivity request:IE - APN(XXX)"
+message_8 = "PDN connectivity Reject:IE- ESM cause #27 (missing or unknown APN)"
+message_9 = "BEARER CONTEXT MODIFICATION REQUEST"
+message_10 = "BEARER CONTEXT MODIFICATION RESPONSE\n"
+message_11 = "F1 UE context modification procedure"
+message_12 = "UE Context Release"
+message_13 = "BEARER CONTEXT RELEASE COMMAND"
+message_14 = "F1 UE context release procedure"
+message_15 = "BEARER CONTEXT RELEASE COMPLETE"
+message_16 = "BEARER CONTEXT SETUP REQUEST:IE - UL TNL address information for S1-U or NG-U\n"
+message_17 = "BEARER CONTEXT SETUP RESPONSE\n"
+message_18 = "F1 UE context setup procedure"
+message_19 = "RRCSetupRequest:establishmentCause-highPriorityAccess\n"
+message_20 = "RRCConnectionSetup"
+message_21 = "RRCConnectionSetupComplete"
+
+
+path1 = "D:\TestCases\Locker\-UE\msg_from_UE.txt"
+path2 = "D:\TestCases\Locker\gNB\msg_from_gNB.txt"
+
+#paths for validation
+path3 = "D:\TestCases\Locker\gNB\msg_from_UE.txt"
+path4 = "D:\TestCases\Locker\-UE\msg_from_gNB.txt"
+
+#password for locker
+pw = "password"
+pw1 = "password"
+
+#path for cu,du & menb
+cp_path = "D:\TestCases\Locker\gNB\CU-CP\msg_from_CUCP.txt"
+cp1_path = "D:\TestCases\Locker\gNB\CU-CP"
+cp2_path = "D:\TestCases\Locker\gNB\CU-CP\msg_from_CUUP.txt"
+cp3_path = "D:\TestCases\Locker\gNB\CU-CP\msg_from_DU.txt"
+cp4_path = "D:\TestCases\Locker\gNB\CU-CP\msg_from_Menb.txt"
+up_path = "D:\TestCases\Locker\gNB\CU-UP\msg_from_CUUP.txt"
+up1_path = "D:\TestCases\Locker\gNB\CU-UP"
+up2_path = "D:\TestCases\Locker\gNB\CU-UP\msg_from_CUCP.txt"
+du_path = "D:\TestCases\Locker\gNB\DU\msg_from_DU.txt"
+du1_path = "D:\TestCases\Locker\gNB\DU"
+du2_path = "D:\TestCases\Locker\gNB\DU\msg_from_CUCP.txt"
+me_path = "D:\TestCases\Locker\MeNB\msg_from_Menb.txt"
+me1_path = "D:\TestCases\Locker\MeNB"
