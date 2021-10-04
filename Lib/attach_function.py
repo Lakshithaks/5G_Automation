@@ -16,35 +16,30 @@ class attach_function:
 
     def unlock(self):
 
-        #Unlock the folder
+        # Unlock the folder
         pw = config_file.pw
 
-        while True:
-            pw1 = config_file.pw1
-            if pw1 == pw:
-                os.chdir("D:\TestCases")
-
-                if not os.path.exists(r"D:\TestCases\Locker"):
-
-                    if not os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}"):
-
-                        os.mkdir("Locker")
-
-                        print("Locker Folder Successfully created")
-
-                    else:
-
-                        os.popen('attrib -h -s -r Locker')
-
-                        os.rename("Locker.{645ff040-5081-101b-9f08-00aa002f954e}", "Locker")
-
-                        print("Locker Folder has been Successfully Unlocked")
-
-                        break
+        # while True:
+        pw1 = config_file.pw1
+        if pw1 == pw:
+            os.chdir(config_file.dir_path)
+            if not os.path.exists(config_file.loc_path):
+                if not os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}"):
+                    os.mkdir("Locker")
+                    print("Locker Folder Successfully created")
 
                 else:
-                    print("wrong password! Try again later")
-            break
+                    os.popen('attrib -h -s -r Locker')
+                    os.rename("Locker.{645ff040-5081-101b-9f08-00aa002f954e}", "Locker")
+                    print("Locker Folder has been Successfully Unlocked")
+                    # break
+
+            else:
+                print("Locker folder is not LOCKED")
+
+        else:
+            print("wrong password! Try again later")
+            # break
 
     def copy_gnb_ue(self):
 
@@ -215,6 +210,31 @@ class attach_function:
         file1.close()
         file2.close()    # closing a file
 
+    def barred_val(self):
+
+        string1 = config_file.message_22
+        string2 = config_file.message_23
+
+        # opening a text file
+        file1 = open(config_file.path3, "r")
+        file2 = open(config_file.path4, "r")
+
+        # read file content
+        readfile1 = file1.read()
+        readfile2 = file2.read()
+
+        # checking condition for string found or not
+        if string1 in readfile1 and string2 in readfile2:
+            print(string1, string2, 'Found In File')
+
+        else:
+            raise Exception("Messages not found")
+            # print('Not Found')
+
+            # closing a file
+        file1.close()
+        file2.close()
+
     def delete(self):
 
         f1 = open(config_file.path3, 'r')
@@ -239,46 +259,45 @@ class attach_function:
         f1.close()
         f2.close()
 
-    def lock(self):      #lock the folder
+    def lock(self):  # lock the folder
 
-        p_w = "password"
+        p_w = config_file.pw
 
-        while True:
-            pw1 = "password"
-            if p_w == pw1:
-                os.chdir("D:\TestCases")
-                # print("Your path Successfully Changed")
-                # If Locker folder or Recycle bin does not exist then we will be create Locker Folder
+        # while True:
+        pw1 = config_file.pw1
+        if p_w == pw1:
+            os.chdir(config_file.dir_path)
+            # print("Your path Successfully Changed")
+            # If Locker folder or Recycle bin does not exist then we will be create Locker Folder
 
-                if os.path.exists(r"D:\TestCases\Locker"):
-                    os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
-
-                    os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
-
-                    print("Locker folder has been successfully locked")
-
-                    sys.exit()
-
-                else:
-                    os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
-
-                    os.mkdir("Locker")
-
-                    print("Locker Folder Successfully created")
-
+            if os.path.exists(config_file.loc_path):
+                os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
+                os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
+                print("Locker folder has been successfully locked")
+                # sys.exit()
+                # break
 
             else:
-                print("wrong password! Try again later")
-                break
+                os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
+                os.mkdir("Locker")
+                print("Locker Folder Successfully created")
+                os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
+                os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
+                print("Locker folder has been successfully locked")
+                # break
+
+        else:
+            print("wrong password! Try again later")
+            # break
 
 
 
-class_instance = attach_function()
+#class_instance = attach_function()
 # class_instance.unlock()
-class_instance.copy_gnb_ue()
+#class_instance.copy_gnb_ue()
 # class_instance.rach_req_val()
 # class_instance.rach_res_val()
-class_instance.srb_val()
+#class_instance.srb_val()
 # class_instance.delete()
 # class_instance.lock()
 

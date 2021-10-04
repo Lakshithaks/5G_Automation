@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20210930 11:19:50.655" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211004 17:16:53.983" rpa="false" schemaversion="2">
 <suite id="s1" name="RACH Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\RACH_Testsuite.robot">
-<test id="s1-t1" name="TC_attach_1.14: SRB1 setup procedure">
-<kw name="Moving Source Files To Destination Folder" library="attach_keyword">
-<kw name="Copy Gnb Ue" library="attach_function">
-<msg timestamp="20210930 11:19:50.818" level="INFO">Successfully moved the file</msg>
-<status status="PASS" starttime="20210930 11:19:50.814" endtime="20210930 11:19:50.818"/>
+<test id="s1-t1" name="TC_attach_1.3: Initial registration with correct HNI">
+<kw name="Unlock A Window Folder" library="attach_keyword">
+<kw name="Unlock" library="attach_function">
+<msg timestamp="20211004 17:16:55.428" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211004 17:16:54.991" endtime="20211004 17:16:55.428"/>
 </kw>
-<status status="PASS" starttime="20210930 11:19:50.813" endtime="20210930 11:19:50.818"/>
+<status status="PASS" starttime="20211004 17:16:54.990" endtime="20211004 17:16:55.429"/>
 </kw>
-<kw name="SRB1 Validation" library="attach_keyword">
-<kw name="Srb Val" library="attach_function">
-<msg timestamp="20210930 11:19:50.820" level="INFO">RRCSetupRequest:establishmentCause-highPriorityAccess
- RRCConnectionSetupComplete Found In File
-RRCConnectionSetup Found In File</msg>
-<status status="PASS" starttime="20210930 11:19:50.819" endtime="20210930 11:19:50.820"/>
-</kw>
-<status status="PASS" starttime="20210930 11:19:50.818" endtime="20210930 11:19:50.820"/>
-</kw>
-<status status="PASS" starttime="20210930 11:19:50.812" endtime="20210930 11:19:50.821"/>
+<status status="PASS" starttime="20211004 17:16:54.988" endtime="20211004 17:16:55.430"/>
 </test>
-<status status="PASS" starttime="20210930 11:19:50.673" endtime="20210930 11:19:50.824"/>
+<status status="PASS" starttime="20211004 17:16:53.992" endtime="20211004 17:16:55.440"/>
 </suite>
 <statistics>
 <total>

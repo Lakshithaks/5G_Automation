@@ -1,5 +1,3 @@
-attach_keyword
-
 *** Settings ***
 
 
@@ -38,6 +36,9 @@ Lock A Window Folder
 Copying Source Files To Destination Folder
     copy_file
 
+Registration Validation
+    int_reg_val
+
 Bearer Setup Validation
     b_setup_val
 
@@ -47,3 +48,8 @@ Bearer Release Validation
 SRB1 Validation
     srb_val
 
+Cell Barred Validatiom
+    barred_val
+
+Reg Correct HNI Validation
+    crct_hni_val
