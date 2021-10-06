@@ -53,3 +53,14 @@ Cell Barred Validatiom
 
 Reg Correct HNI Validation
     crct_hni_val
+
+Reg With Incorrect HNI Validation
+    incrct_hni_val
+
+Aeroplane Mode To Normal Mode Val
+    AM_to_NM
+
+Deregistration Validation
+    dereg_val
+
+

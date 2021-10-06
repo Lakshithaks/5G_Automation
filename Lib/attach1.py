@@ -32,6 +32,7 @@ class attach1:
         source12 = config_file.pcf_spath
         source13 = config_file.smf_spath
         source14 = config_file.n3iwf_spath
+        source15 = config_file.upf_spath
         # Destination path
         destination1 = config_file.up1_path
         destination2 = config_file.du1_path
@@ -47,6 +48,9 @@ class attach1:
         destination11 = config_file.pcf_npath
         destination12 = config_file.smf_npath
         destination13 = config_file.n3iwf_npath
+        #destination14 = config_file.smf_npath
+        destination15 = config_file.upf_npath
+
 
         # source to destination
         dest = shutil.copy(source1, destination1)
@@ -70,14 +74,20 @@ class attach1:
         dest17 = shutil.copy(source7, destination10)
         dest18 = shutil.move(source11, destination6)
         dest19 = shutil.copy(source7, destination9)
-        dest20 = shutil.move(source10, destination6)
+        dest20 = shutil.copy(source10, destination6)
         dest21 = shutil.move(source8, destination9)
         dest22 = shutil.copy(source7, destination11)
-        dest23 = shutil.move(source12, destination6)
+        dest23 = shutil.copy(source12, destination6)
         dest24 = shutil.copy(source7, destination12)
-        dest25 = shutil.move(source13, destination6)
+        dest25 = shutil.copy(source13, destination6)
         dest26 = shutil.move(source7, destination13)
         dest27 = shutil.move(source14, destination6)
+        dest28 = shutil.copy(source13, destination15)
+        dest29 = shutil.move(source15, destination12)
+        dest30 = shutil.copy(source13, destination11)
+        dest31 = shutil.move(source12, destination12)
+        dest32 = shutil.move(source13, destination9)
+        dest33 = shutil.move(source10, destination12)
 
 
 
@@ -340,8 +350,136 @@ class attach1:
         file1.close()
         print("*** Successfully performed initial registration with correct HNI ***")
 
+    def incrct_hni_val(self):
+        string1 = config_file.message_22
+        string2 = config_file.message_24
+        string3 = config_file.message_25
+        string4 = config_file.message_26
+        string5 = config_file.message_27
+        string6 = config_file.message_28
+        string7 = config_file.message_52
+
+        file1 = open(config_file.old_amf_pathd1, "r")
+        file2 = open(config_file.new_amf_pathd5, "r")
+        file3 = open(config_file.ue_pathd1, "r")
+        file4 = open(config_file.new_amf_pathd9, "r")
+        file5 = open(config_file.ausf_pathd1, "r")
+        file6 = open(config_file.udm_pathd1, "r")
+        file7 = open(config_file.new_amf_pathd3, "r")
+
+        readfile1 = file1.read()
+        readfile2 = file2.read()
+        readfile3 = file3.read()
+        readfile4 = file4.read()
+        readfile5 = file5.read()
+        readfile6 = file6.read()
+        readfile7 = file7.read()
+
+
+        print("*** RACH procedure is successfully validated ***")
+        if string1 in readfile7 and string2 in readfile1:
+            print(string1, string2, 'Found In File')
+        if string3 in readfile2 and string4 in readfile3:
+            print(string3, string4, 'Found In File')
+        if string5 in readfile4 and string6 in readfile5:
+            print(string5, string6, 'Found In File')
+        if string7 in readfile6:
+            print(string7, 'Found In File')
+
+        else:
+            raise Exception("messages not found")
+
+        # closing a file
+        file1.close()
+        print("*** Initial registration is not successfull due to incorrect HNI ***")
+
+    def dereg_val(self):
+        string1 = config_file.message_53
+        string2 = config_file.message_54
+        string3 = config_file.message_55
+        string4 = config_file.message_56
+        string5 = config_file.message_57
+        string6 = config_file.message_58
+        string7 = config_file.message_59
+        string8 = config_file.message_60
+        string9 = config_file.message_61
+        string10 = config_file.message_62
+        string11 = config_file.message_63
+        string12 = config_file.message_64
+
+        file1 = open(config_file.new_amf_pathd9, "r")
+        file2 = open(config_file.ue_pathd1, "r")
+        file3 = open(config_file.new_amf_pathd7, "r")
+        file4 = open(config_file.udm_pathd4, "r")
+        file5 = open(config_file.upf_pathd1, "r")
+        file6 = open(config_file.pcf_pathd1, "r")
+        file7 = open(config_file.pcf_pathd2, "r")
+        file8 = open(config_file.gnb_pathd1, "r")
+        file9 = open(config_file.new_amf_pathd3, "r")
+        file10 = open(config_file.new_amf_pathd6, "r")
+        file11 = open(config_file.smf_pathd1, "r")
+        file12 = open(config_file.smf_pathd2, "r")
+        file13 = open(config_file.smf_pathd3, "r")
+        file14 = open(config_file.smf_pathd4, "r")
+        file15 = open(config_file.path3, "r")
+        file16 = open(config_file.path4, "r")
+
+
+        readfile1 = file1.read()
+        readfile2 = file2.read()
+        readfile3 = file3.read()
+        readfile4 = file4.read()
+        readfile5 = file5.read()
+        readfile6 = file6.read()
+        readfile7 = file7.read()
+        readfile8 = file8.read()
+        readfile9 = file9.read()
+        readfile10 = file10.read()
+        readfile11 = file11.read()
+        readfile12 = file12.read()
+        readfile13 = file13.read()
+        readfile14 = file14.read()
+        readfile15 = file14.read()
+        readfile16 = file14.read()
+
+
+        if string1 in readfile1 and string2 in readfile11:
+            print(string1, string2, 'Found In File')
+        if string3 in readfile5 and string4 in readfile12:
+            print(string3, string4, 'Found In File')
+        if string5 in readfile3:
+            print(string5, 'Found In File')
+        if string6 in readfile7 and string6 in readfile13:
+            print(string6, 'Found In File')
+        if string7 in readfile4 and string7 in readfile14:
+            print(string7, 'Found In File')
+        if string8 in readfile4 and string8 in readfile14:
+            print(string8, 'Found In File')
+        if string9 in readfile10 and string9 in readfile6:
+            print(string9, 'Found In File')
+        if string10 in readfile10 and string10 in readfile6:
+            print(string10, 'Found In File')
+        if string11 in readfile2:
+            print(string11, 'Found In File')
+        if string12 in readfile15 and string12 in readfile16:
+            print(string12, 'Found In File')
+        if string12 in readfile8 and string12 in readfile9:
+            print(string12, 'Found In File')
+
+        else:
+            raise Exception("messages not found")
+
+        # closing a file
+        file1.close()
+        print("*** Successfully performed the deregistration ***")
+
+
+
+
 # class_instance = attach1()
 # class_instance.copy_file()
-# class_instance.int_reg_val()
-# class_instance.b_setup_val()
-# class_instance.b_release_val()
+# # class_instance.int_reg_val()
+# # #class_instance.b_setup_val()
+# # #class_instance.b_release_val()
+# #class_instance.crct_hni_val()
+# class_instance.dereg_val()

@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211004 17:16:53.983" rpa="false" schemaversion="2">
-<suite id="s1" name="RACH Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\RACH_Testsuite.robot">
-<test id="s1-t1" name="TC_attach_1.3: Initial registration with correct HNI">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211005 20:26:31.407" rpa="false" schemaversion="2">
+<suite id="s1" name="Attach Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\Attach_Testsuite.robot">
+<test id="s1-t1" name="TC_attach_1.16: Initial Registration when cell is barred">
 <kw name="Unlock A Window Folder" library="attach_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211004 17:16:55.428" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211004 17:16:54.991" endtime="20211004 17:16:55.428"/>
+<msg timestamp="20211005 20:26:31.605" level="INFO">Locker folder is not LOCKED</msg>
+<status status="PASS" starttime="20211005 20:26:31.604" endtime="20211005 20:26:31.605"/>
 </kw>
-<status status="PASS" starttime="20211004 17:16:54.990" endtime="20211004 17:16:55.429"/>
+<status status="PASS" starttime="20211005 20:26:31.604" endtime="20211005 20:26:31.606"/>
 </kw>
-<status status="PASS" starttime="20211004 17:16:54.988" endtime="20211004 17:16:55.430"/>
+<kw name="Moving Source Files To Destination Folder" library="attach_keyword">
+<kw name="Copy Gnb Ue" library="attach_function">
+<msg timestamp="20211005 20:26:31.608" level="INFO">Successfully moved the file</msg>
+<status status="PASS" starttime="20211005 20:26:31.607" endtime="20211005 20:26:31.608"/>
+</kw>
+<status status="PASS" starttime="20211005 20:26:31.606" endtime="20211005 20:26:31.608"/>
+</kw>
+<kw name="Cell Barred Validatiom" library="attach_keyword">
+<kw name="Barred Val" library="attach_function">
+<msg timestamp="20211005 20:26:31.610" level="INFO">Registration Request Registration Reject:Cause(IE)-Cell barred Found In File</msg>
+<status status="PASS" starttime="20211005 20:26:31.609" endtime="20211005 20:26:31.610"/>
+</kw>
+<status status="PASS" starttime="20211005 20:26:31.609" endtime="20211005 20:26:31.610"/>
+</kw>
+<kw name="Lock A Window Folder" library="attach_keyword">
+<kw name="Lock" library="attach_function">
+<msg timestamp="20211005 20:26:31.626" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211005 20:26:31.613" endtime="20211005 20:26:31.626"/>
+</kw>
+<status status="PASS" starttime="20211005 20:26:31.612" endtime="20211005 20:26:31.627"/>
+</kw>
+<kw name="Unlock A Window Folder" library="attach_keyword">
+<kw name="Unlock" library="attach_function">
+<msg timestamp="20211005 20:26:31.636" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211005 20:26:31.627" endtime="20211005 20:26:31.637"/>
+</kw>
+<status status="PASS" starttime="20211005 20:26:31.627" endtime="20211005 20:26:31.637"/>
+</kw>
+<status status="PASS" starttime="20211005 20:26:31.602" endtime="20211005 20:26:31.639"/>
 </test>
-<status status="PASS" starttime="20211004 17:16:53.992" endtime="20211004 17:16:55.440"/>
+<status status="PASS" starttime="20211005 20:26:31.419" endtime="20211005 20:26:31.641"/>
 </suite>
 <statistics>
 <total>
@@ -20,7 +48,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RACH Testsuite">RACH Testsuite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Attach Testsuite">Attach Testsuite</stat>
 </suite>
 </statistics>
 <errors>

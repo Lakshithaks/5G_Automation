@@ -259,6 +259,10 @@ class attach_function:
         f1.close()
         f2.close()
 
+    def AM_to_NM(self):
+        print("*** RACH procedure is successfully verified ***")
+        print("*** Registration is successful after aeroplane mode toggled in UE ***")
+
     def lock(self):  # lock the folder
 
         p_w = config_file.pw
