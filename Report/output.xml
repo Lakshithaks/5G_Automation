@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211005 20:26:31.407" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211008 18:47:54.625" rpa="false" schemaversion="2">
 <suite id="s1" name="Attach Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\Attach_Testsuite.robot">
-<test id="s1-t1" name="TC_attach_1.16: Initial Registration when cell is barred">
+<test id="s1-t1" name="TC_attach_1.31: Network Initiated Deregistration procedure">
+<kw name="Lock A Window Folder" library="attach_keyword">
+<kw name="Lock" library="attach_function">
+<msg timestamp="20211008 18:47:54.781" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211008 18:47:54.767" endtime="20211008 18:47:54.782"/>
+</kw>
+<status status="PASS" starttime="20211008 18:47:54.767" endtime="20211008 18:47:54.782"/>
+</kw>
 <kw name="Unlock A Window Folder" library="attach_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211005 20:26:31.605" level="INFO">Locker folder is not LOCKED</msg>
-<status status="PASS" starttime="20211005 20:26:31.604" endtime="20211005 20:26:31.605"/>
+<msg timestamp="20211008 18:47:54.788" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211008 18:47:54.783" endtime="20211008 18:47:54.788"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.604" endtime="20211005 20:26:31.606"/>
+<status status="PASS" starttime="20211008 18:47:54.783" endtime="20211008 18:47:54.788"/>
 </kw>
-<kw name="Moving Source Files To Destination Folder" library="attach_keyword">
-<kw name="Copy Gnb Ue" library="attach_function">
-<msg timestamp="20211005 20:26:31.608" level="INFO">Successfully moved the file</msg>
-<status status="PASS" starttime="20211005 20:26:31.607" endtime="20211005 20:26:31.608"/>
+<kw name="Copying Source Files To Destination Folder" library="attach_keyword">
+<kw name="Copy File" library="attach1">
+<msg timestamp="20211008 18:47:54.893" level="INFO">Source files has been successfully copied to destination folder!!</msg>
+<status status="PASS" starttime="20211008 18:47:54.788" endtime="20211008 18:47:54.894"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.606" endtime="20211005 20:26:31.608"/>
+<status status="PASS" starttime="20211008 18:47:54.788" endtime="20211008 18:47:54.894"/>
 </kw>
-<kw name="Cell Barred Validatiom" library="attach_keyword">
-<kw name="Barred Val" library="attach_function">
-<msg timestamp="20211005 20:26:31.610" level="INFO">Registration Request Registration Reject:Cause(IE)-Cell barred Found In File</msg>
-<status status="PASS" starttime="20211005 20:26:31.609" endtime="20211005 20:26:31.610"/>
+<kw name="Network Initiated Dereg Val" library="attach_keyword">
+<kw name="Net Dereg Val" library="attach1">
+<msg timestamp="20211008 18:47:54.911" level="INFO">UE is in idle or connected mode
+nid-N4 Session Release Response
+nid-De-registration Request
+nid-N4 Session Release Request
+nid-Nudm_UECM_DeregistrationNotification
+nid-Nudm_SDM_Unsubscribe
+nid-Signalling Connection Release
+nid-Nudm_UECM_DeregistrationNotificationAck
+nid-Nsmf_PDUSession_ReleaseSMContext Response
+nid-AMF-initiated UE Policy Association Termination
+nid-Nsmf_PDUSession_ReleaseSMContext Request
+nid-De-registration Accept
+nid-AMF-initiated AM Policy Association Termination
+*** Successfully performed the network initiated deregistration ***</msg>
+<status status="PASS" starttime="20211008 18:47:54.896" endtime="20211008 18:47:54.911"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.609" endtime="20211005 20:26:31.610"/>
+<status status="PASS" starttime="20211008 18:47:54.895" endtime="20211008 18:47:54.911"/>
 </kw>
 <kw name="Lock A Window Folder" library="attach_keyword">
 <kw name="Lock" library="attach_function">
-<msg timestamp="20211005 20:26:31.626" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211005 20:26:31.613" endtime="20211005 20:26:31.626"/>
+<msg timestamp="20211008 18:47:54.921" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211008 18:47:54.914" endtime="20211008 18:47:54.921"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.612" endtime="20211005 20:26:31.627"/>
+<status status="PASS" starttime="20211008 18:47:54.914" endtime="20211008 18:47:54.922"/>
 </kw>
 <kw name="Unlock A Window Folder" library="attach_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211005 20:26:31.636" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211005 20:26:31.627" endtime="20211005 20:26:31.637"/>
+<msg timestamp="20211008 18:47:54.934" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211008 18:47:54.924" endtime="20211008 18:47:54.934"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.627" endtime="20211005 20:26:31.637"/>
+<status status="PASS" starttime="20211008 18:47:54.923" endtime="20211008 18:47:54.934"/>
 </kw>
-<status status="PASS" starttime="20211005 20:26:31.602" endtime="20211005 20:26:31.639"/>
+<status status="PASS" starttime="20211008 18:47:54.766" endtime="20211008 18:47:54.936"/>
 </test>
-<status status="PASS" starttime="20211005 20:26:31.419" endtime="20211005 20:26:31.641"/>
+<status status="PASS" starttime="20211008 18:47:54.632" endtime="20211008 18:47:54.939"/>
 </suite>
 <statistics>
 <total>

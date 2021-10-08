@@ -9,23 +9,14 @@ Unlock A Window Folder
 Moving Source Files To Destination Folder
     copy_gnb_ue
 
-Rach Request Validation
-    rach_req_val
+Rach Validation
+    rach_val
 
-EPS Request Validation
-    eps_req_val
+EPS Validation
+    eps_val
 
-APN Request Validation
-    apn_req_val
-
-Rach Response Validation
-    rach_res_val
-
-EPS Response Validation
-    eps_res_val
-
-APNResponse Validation
-    apn_res_val
+APN Validation
+    apn_val
 
 Deleting Printed Messages
     delete
@@ -63,4 +54,5 @@ Aeroplane Mode To Normal Mode Val
 Deregistration Validation
     dereg_val
 
-
+Network Initiated Dereg Val
+    net_dereg_val

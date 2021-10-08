@@ -1,11 +1,11 @@
 import os
+import re
 import time
 import sys
 sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\VariableFiles")
 #sys.path.append("/VariableFiles")
 import config_file
 import shutil
-
 
 class attach_function:
 
@@ -14,12 +14,9 @@ class attach_function:
     def __init__(self):
         pass
 
-    def unlock(self):
-
-        # Unlock the folder
+    def unlock(self):#Unlock the folder
+        
         pw = config_file.pw
-
-        # while True:
         pw1 = config_file.pw1
         if pw1 == pw:
             os.chdir(config_file.dir_path)
@@ -32,216 +29,99 @@ class attach_function:
                     os.popen('attrib -h -s -r Locker')
                     os.rename("Locker.{645ff040-5081-101b-9f08-00aa002f954e}", "Locker")
                     print("Locker Folder has been Successfully Unlocked")
-                    # break
 
             else:
                 print("Locker folder is not LOCKED")
 
         else:
             print("wrong password! Try again later")
-            # break
 
     def copy_gnb_ue(self):
 
-        # Source path
-        source5 = config_file.path1
-        source6 = config_file.path2
-
-        # Destination path
-        destination4 = 'D:\TestCases\Locker\gNB'
-        destination5 = 'D:\TestCases\Locker\-UE'
+        source = [config_file.path1, config_file.path2]
+        destination = [config_file.gnb_npath, config_file.ue_npath]
 
         # source to destination
-        dest5 = shutil.move(source5, destination4)
-        dest6 = shutil.move(source6, destination5)
+        dest1 = shutil.move(source[0], destination[0])
+        dest2 = shutil.move(source[1], destination[1])
         print("Successfully moved the file")
 
-    def rach_req_val(self):
-        string1 = config_file.message_1
-        string3 = config_file.message_3
+    def rach_val(self):
+        matchingStr = "rach.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("*** Rach procedure and RRC setup are successful ***")
 
-        # opening a text file
-        file1 = open(config_file.path3, "r")
+    def eps_val(self):
+        matchingStr = "eps.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("Combined EPS/IMSI Registration is successful")
 
-        # read file content
-        readfile = file1.read()
-
-        # checking condition for string found or not
-        if string1 in readfile and string3 in readfile:
-            print(string1, string3, 'Found In Request File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file1.close()
-
-    def eps_req_val(self):
-
-        string5 = config_file.message_5
-
-        # opening a text file
-        file1 = open(config_file.path3, "r")
-
-        # read file content
-        readfile = file1.read()
-
-        # checking condition for string found or not
-
-        if string5 in readfile:
-            print(string5, 'Found In Response File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file1.close()
-    def apn_req_val(self):
-
-        string7 = config_file.message_7
-
-        # opening a text file
-        file1 = open(config_file.path3, "r")
-
-        # read file content
-        readfile = file1.read()
-
-        # checking condition for string found or not
-
-        if string7 in readfile:
-            print(string7, 'Found In Response File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file1.close()
-
-    def rach_res_val(self):
-        string2 = config_file.message_2
-        string4 = config_file.message_4
-
-        # opening a text file
-        file2 = open(config_file.path4, "r")
-
-        # read file content
-        readfile = file2.read()
-
-        # checking condition for string found or not
-        if string2 in readfile and string4 in readfile:
-            print(string2, string4, 'Found In Response File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file2.close()
-
-    def eps_res_val(self):
-
-        string6 = config_file.message_6
-
-        # opening a text file
-        file2 = open(config_file.path4, "r")
-
-        # read file content
-        readfile = file2.read()
-
-        # checking condition for string found or not
-        if string6 in readfile:
-            print(string6, 'Found In Response File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file2.close()
-
-    def apn_res_val(self):
-        string8 = config_file.message_8
-
-        # opening a text file
-        file2 = open(config_file.path4, "r")
-
-        # read file content
-        readfile = file2.read()
-
-        # checking condition for string found or not
-        if string8 in readfile:
-            print(string8, 'Found In Response File')
-
-        else:
-            raise Exception("Messages not found")
-            #print('Not Found')
-
-            # closing a file
-        file2.close()
-
+    def apn_val(self):
+        matchingStr = "apn.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print(" Registration Reject with incorrect configured APN")
 
     def srb_val(self):
-
-        string1 = config_file.message_19
-        string2 = config_file.message_21
-        string3 = config_file.message_20
-
-        # opening a text file
-        file1 = open(config_file.path3, "r")
-        file2 = open(config_file.path4, "r")
-
-        # read file content
-        readfile1 = file1.read()
-        readfile2 = file2.read()
-
-        # checking condition for string found or not
-
-        if string1 in readfile1 and string2 in readfile1:
-            print(string1, string2, 'Found In File')
-        if string3 in readfile2:
-            print(string3, 'Found In File')
-
-        else:
-            raise Exception("Messages not found")
-        print("SRB1 setup procedure is performed")
-        file1.close()
-        file2.close()    # closing a file
+        print("Successfully validated rach procedure")
+        matchingStr = "srb.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("SRB1 is established successfully ")
 
     def barred_val(self):
-
-        string1 = config_file.message_22
-        string2 = config_file.message_23
-
-        # opening a text file
-        file1 = open(config_file.path3, "r")
-        file2 = open(config_file.path4, "r")
-
-        # read file content
-        readfile1 = file1.read()
-        readfile2 = file2.read()
-
-        # checking condition for string found or not
-        if string1 in readfile1 and string2 in readfile2:
-            print(string1, string2, 'Found In File')
-
-        else:
-            raise Exception("Messages not found")
-            # print('Not Found')
-
-            # closing a file
-        file1.close()
-        file2.close()
+        matchingStr = "barred.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+            
+    def AM_to_NM(self):
+        print("*** RACH procedure is successfully verified ***")
+        print("*** Registration is successful after aeroplane mode toggled in UE ***")
 
     def delete(self):
 
         f1 = open(config_file.path3, 'r')
         f2 = open(config_file.path4, 'r')
 
-        a = [config_file.message_1, config_file.message_3, config_file.message_5, config_file.message_7]
-        b = [config_file.message_2, config_file.message_4, config_file.message_6, config_file.message_8]
+        a = [config_file.message_1, config_file.message_3]#config_file.message_5, config_file.message_7
+        b = [config_file.message_2, config_file.message_4] #config_file.message_6, config_file.message_8
         lst = []
         for line in f1 and f2:
             for word in a and b:
@@ -259,28 +139,19 @@ class attach_function:
         f1.close()
         f2.close()
 
-    def AM_to_NM(self):
-        print("*** RACH procedure is successfully verified ***")
-        print("*** Registration is successful after aeroplane mode toggled in UE ***")
-
-    def lock(self):  # lock the folder
+    def lock(self):      #lock the folder
 
         p_w = config_file.pw
-
-        # while True:
         pw1 = config_file.pw1
         if p_w == pw1:
             os.chdir(config_file.dir_path)
-            # print("Your path Successfully Changed")
-            # If Locker folder or Recycle bin does not exist then we will be create Locker Folder
 
             if os.path.exists(config_file.loc_path):
+
                 os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
                 os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
                 print("Locker folder has been successfully locked")
-                # sys.exit()
-                # break
-
+                
             else:
                 os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
                 os.mkdir("Locker")
@@ -288,20 +159,19 @@ class attach_function:
                 os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
                 os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
                 print("Locker folder has been successfully locked")
-                # break
 
         else:
             print("wrong password! Try again later")
-            # break
-
 
 
 #class_instance = attach_function()
-# class_instance.unlock()
+#class_instance.unlock()
 #class_instance.copy_gnb_ue()
-# class_instance.rach_req_val()
-# class_instance.rach_res_val()
+#class_instance.rach_val()
+#class_instance.eps_val()
+#class_instance.apn_val()
 #class_instance.srb_val()
+#class_instance.barred_val()
 # class_instance.delete()
-# class_instance.lock()
-
+#class_instance.lock()
+#class_instance.AM_to_NM()
