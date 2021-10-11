@@ -17,11 +17,11 @@ class attach1:
         source = [config_file.cp_path, config_file.up_path, config_file.du_path, config_file.me_path, config_file.path1,
                   config_file.path2, config_file.new_amf_spath, config_file.old_amf_spath, config_file.ausf_spath,
                   config_file.udm_spath, config_file.eir_spath, config_file.pcf_spath, config_file.smf_spath,
-                  config_file.n3iwf_spath, config_file.upf_spath]
+                  config_file.n3iwf_spath, config_file.upf_spath, config_file.smsf_spath]
         destination = [config_file.up1_path, config_file.du1_path, config_file.cp1_path, config_file.gnb_npath,
                        config_file.ue_npath, config_file.new_amf_npath, config_file.old_amf_npath,
                        config_file.ausf_npath, config_file.udm_npath, config_file.eir_npath, config_file.pcf_npath,
-                       config_file.smf_npath, config_file.n3iwf_npath, config_file.upf_npath]
+                       config_file.smf_npath, config_file.n3iwf_npath, config_file.upf_npath, config_file.smsf_npath]
 
         # source to destination
         dest = shutil.copy(source[0], destination[0])
@@ -51,7 +51,7 @@ class attach1:
         dest23 = shutil.copy(source[11], destination[5])
         dest24 = shutil.copy(source[6], destination[11])
         dest25 = shutil.copy(source[12], destination[5])
-        dest26 = shutil.move(source[6], destination[12])
+        dest26 = shutil.copy(source[6], destination[12])
         dest27 = shutil.copy(source[13], destination[7])
         dest27 = shutil.move(source[13], destination[5])
         dest28 = shutil.copy(source[12], destination[13])
@@ -59,7 +59,11 @@ class attach1:
         dest30 = shutil.copy(source[12], destination[10])
         dest31 = shutil.move(source[11], destination[11])
         dest32 = shutil.move(source[12], destination[8])
-        dest33 = shutil.move(source[9], destination[11])
+        dest33 = shutil.copy(source[9], destination[11])
+        dest34 = shutil.copy(source[15], destination[5])
+        dest35 = shutil.move(source[15], destination[8])
+        dest36 = shutil.move(source[6], destination[14])
+        dest37 = shutil.move(source[9], destination[14])
         print("Source files has been successfully copied to destination folder!!")
 
     def b_release_val(self):
@@ -173,6 +177,27 @@ class attach1:
             print(res)
         print("*** Initial registration is not successful due to incorrect HNI ***")
 
+    def reg_sms_nas(self):
+
+        print("Power On the UE with correct HNI SIM card")
+        matchingStr = "sms_nas.*"
+        path = [config_file.path3, config_file.old_amf_pathd1, config_file.new_amf_pathd5, config_file.ue_pathd1,
+                config_file.new_amf_pathd9, config_file.ausf_pathd1,
+                config_file.udm_pathd1, config_file.ausf_pathd2, config_file.new_amf_pathd1, config_file.gnb_pathd1,
+                config_file.new_amf_pathd3, config_file.eir_pathd1, config_file.new_amf_pathd2,
+                config_file.udm_pathd2, config_file.new_amf_pathd8, config_file.udm_pathd3, config_file.pcf_pathd1,
+                config_file.new_amf_pathd6, config_file.smf_pathd1, config_file.new_amf_pathd7,
+                config_file.n3iwf_pathd1, config_file.new_amf_pathd4, config_file.smsf_dpath1,
+                config_file.new_amf_pathd10, config_file.udm_pathd5, config_file.smsf_dpath2, ]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("*** Successfully verified the SMS delivery over NAS ***")
 
 #class_instance = attach1()
 #class_instance.copy_file()

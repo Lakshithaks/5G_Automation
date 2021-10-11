@@ -120,11 +120,29 @@ TC_attach_1.16: Initial Registration when cell is barred
     Lock A Window Folder
     Unlock A Window Folder
 
+TC_attach_1.17: MIB SIB decoding for SSB case C
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Moving Source Files To Destination Folder
+    MIB And SIB Decode
+    Lock A Window Folder
+    Unlock A Window Folder
+
 TC_attach_1.31: Network Initiated Deregistration procedure
 
     Lock A Window Folder
     Unlock A Window Folder
     Copying Source Files To Destination Folder
     Network Initiated Dereg Val
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_attach_1.32: Registration procedures for SMS over NAS
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Copying Source Files To Destination Folder
+    Reg For SMS Over NAS
     Lock A Window Folder
     Unlock A Window Folder

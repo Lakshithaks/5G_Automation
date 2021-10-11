@@ -118,6 +118,8 @@ udm_npath = "D:\TestCases\Locker\CN\-UDM"
 udm_spath = "D:\TestCases\Locker\CN\-UDM\msg_from_UDM.txt"
 upf_npath = "D:\TestCases\Locker\CN\-UPF"
 upf_spath = "D:\TestCases\Locker\CN\-UPF\msg_from_UPF.txt"
+smsf_npath = "D:\TestCases\Locker\CN\SMSF"
+smsf_spath = "D:\TestCases\Locker\CN\SMSF\msg_from_SMSF.txt"
 
 #core validation paths
 udm_pathd1 = "D:\TestCases\Locker\CN\-UDM\msg_from_AUSF.txt"
@@ -145,4 +147,7 @@ n3iwf_pathd1 = "D:\TestCases\Locker\CN\-N3IWF\msg_from_newAMF.txt"
 eir_pathd1 = "D:\TestCases\Locker\CN\EIR\msg_from_newAMF.txt"
 ausf_pathd1 = "D:\TestCases\Locker\CN\AUSF\msg_from_newAMF.txt"
 ausf_pathd2 = "D:\TestCases\Locker\CN\AUSF\msg_from_UDM.txt"
-
+smsf_dpath1 = "D:\TestCases\Locker\CN\SMSF\msg_from_newAMF.txt"
+smsf_dpath2 = "D:\TestCases\Locker\CN\SMSF\msg_from_UDM.txt"
+new_amf_pathd10 = "D:\TestCases\Locker\CN\-New_AMF\msg_from_SMSF.txt"
+udm_pathd5 = "D:\TestCases\Locker\CN\-UDM\msg_from_SMSF.txt"

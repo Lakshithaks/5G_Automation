@@ -115,6 +115,19 @@ class attach_function:
         print("*** RACH procedure is successfully verified ***")
         print("*** Registration is successful after aeroplane mode toggled in UE ***")
 
+    def mib_sib(self):
+        matchingStr = "mib_sib.*"
+        path = [config_file.path3, config_file.path4]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh, ):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("*** Verified Rach, Initial Registration and MIB and SIB are decoded successfully ***")
+
     def delete(self):
 
         f1 = open(config_file.path3, 'r')

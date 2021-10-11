@@ -56,3 +56,9 @@ Deregistration Validation
 
 Network Initiated Dereg Val
     net_dereg_val
+
+Reg For SMS Over NAS
+    reg_sms_nas
+
+MIB And SIB Decode
+    mib_sib

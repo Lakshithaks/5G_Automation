@@ -1,65 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211008 18:47:54.625" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211011 18:53:50.180" rpa="false" schemaversion="2">
 <suite id="s1" name="Attach Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\Attach_Testsuite.robot">
-<test id="s1-t1" name="TC_attach_1.31: Network Initiated Deregistration procedure">
+<test id="s1-t1" name="TC_attach_1.32: Registration procedures for SMS over NAS">
 <kw name="Lock A Window Folder" library="attach_keyword">
 <kw name="Lock" library="attach_function">
-<msg timestamp="20211008 18:47:54.781" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211008 18:47:54.767" endtime="20211008 18:47:54.782"/>
+<msg timestamp="20211011 18:53:50.387" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211011 18:53:50.368" endtime="20211011 18:53:50.387"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.767" endtime="20211008 18:47:54.782"/>
+<status status="PASS" starttime="20211011 18:53:50.367" endtime="20211011 18:53:50.387"/>
 </kw>
 <kw name="Unlock A Window Folder" library="attach_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211008 18:47:54.788" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211008 18:47:54.783" endtime="20211008 18:47:54.788"/>
+<msg timestamp="20211011 18:53:50.399" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211011 18:53:50.389" endtime="20211011 18:53:50.399"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.783" endtime="20211008 18:47:54.788"/>
+<status status="PASS" starttime="20211011 18:53:50.388" endtime="20211011 18:53:50.400"/>
 </kw>
 <kw name="Copying Source Files To Destination Folder" library="attach_keyword">
 <kw name="Copy File" library="attach1">
-<msg timestamp="20211008 18:47:54.893" level="INFO">Source files has been successfully copied to destination folder!!</msg>
-<status status="PASS" starttime="20211008 18:47:54.788" endtime="20211008 18:47:54.894"/>
+<msg timestamp="20211011 18:53:50.513" level="INFO">Source files has been successfully copied to destination folder!!</msg>
+<status status="PASS" starttime="20211011 18:53:50.402" endtime="20211011 18:53:50.513"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.788" endtime="20211008 18:47:54.894"/>
+<status status="PASS" starttime="20211011 18:53:50.401" endtime="20211011 18:53:50.514"/>
 </kw>
-<kw name="Network Initiated Dereg Val" library="attach_keyword">
-<kw name="Net Dereg Val" library="attach1">
-<msg timestamp="20211008 18:47:54.911" level="INFO">UE is in idle or connected mode
-nid-N4 Session Release Response
-nid-De-registration Request
-nid-N4 Session Release Request
-nid-Nudm_UECM_DeregistrationNotification
-nid-Nudm_SDM_Unsubscribe
-nid-Signalling Connection Release
-nid-Nudm_UECM_DeregistrationNotificationAck
-nid-Nsmf_PDUSession_ReleaseSMContext Response
-nid-AMF-initiated UE Policy Association Termination
-nid-Nsmf_PDUSession_ReleaseSMContext Request
-nid-De-registration Accept
-nid-AMF-initiated AM Policy Association Termination
-*** Successfully performed the network initiated deregistration ***</msg>
-<status status="PASS" starttime="20211008 18:47:54.896" endtime="20211008 18:47:54.911"/>
+<kw name="Reg For SMS Over NAS" library="attach_keyword">
+<kw name="Reg Sms Nas" library="attach1">
+<msg timestamp="20211011 18:53:50.531" level="INFO">Power On the UE with correct HNI SIM card
+sms_nas-Nsmf_PDUSession_UpdateSMContext Response
+sms_nas-Registration Request 
+sms_nas-Npcf_AMPolicyControl_Create Request
+sms_nas-Nudm_SDM_Get 
+sms_nas-NAS Security Mode Command
+sms_nas-NAS Security Mode complete 
+sms_nas-N5g-eir_EquipmentIdentityCheck_Request
+sms_nas-Nausf_UEAuthenticate_authenticate Request 
+sms_nas-Nudm_SubscriberDataManagement_Get Response 
+sms_nas-NAS Authentication Request
+sms_nas-Registration Accept
+sms_nas-Nudm_SubscriberDataManagement_Get Request
+sms_nas-Nsmsf_SMService_Activate_Request
+sms_nas-N2 AMF Mobility Response
+sms_nas-N2 AMF Mobility Request
+sms_nas-Nudm_UEAuthenticate_Get Response
+sms_nas-Nausf_UEAuthentication_authenticate Response
+sms_nas- Npcf_AMPolicyControl_Create Response
+sms_nas-Nudm_UEAuthenticate_Get Request
+sms_nas-Identity Request 
+sms_nas-Nsmsf_SMService_Activate_Response
+sms_nas-Namf_Communication_UEContextTransfer
+sms_nas-NAS Authentication Response
+sms_nas-Nudm_UECM_Registration Response
+sms_nas-Nudm_UEContextManagement_Deregistration_Notify
+sms_nas-N5g-eir_EquipmentIdentityCheck_Response
+sms_nas-Nsmf_PDUSession_UpdateSMContext Request
+sms_nas-Namf_Communication_UEContextTransfer response
+sms_nas- Nudm_UECM_Registration Request
+sms_nas-Nudm_UE_CM_Registration
+sms_nas-Identity Response 
+*** Successfully verified the SMS delivery over NAS ***</msg>
+<status status="PASS" starttime="20211011 18:53:50.516" endtime="20211011 18:53:50.531"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.895" endtime="20211008 18:47:54.911"/>
+<status status="PASS" starttime="20211011 18:53:50.515" endtime="20211011 18:53:50.531"/>
 </kw>
 <kw name="Lock A Window Folder" library="attach_keyword">
 <kw name="Lock" library="attach_function">
-<msg timestamp="20211008 18:47:54.921" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211008 18:47:54.914" endtime="20211008 18:47:54.921"/>
+<msg timestamp="20211011 18:53:50.541" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211011 18:53:50.533" endtime="20211011 18:53:50.541"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.914" endtime="20211008 18:47:54.922"/>
+<status status="PASS" starttime="20211011 18:53:50.532" endtime="20211011 18:53:50.541"/>
 </kw>
 <kw name="Unlock A Window Folder" library="attach_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211008 18:47:54.934" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211008 18:47:54.924" endtime="20211008 18:47:54.934"/>
+<msg timestamp="20211011 18:53:50.556" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211011 18:53:50.544" endtime="20211011 18:53:50.556"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.923" endtime="20211008 18:47:54.934"/>
+<status status="PASS" starttime="20211011 18:53:50.544" endtime="20211011 18:53:50.557"/>
 </kw>
-<status status="PASS" starttime="20211008 18:47:54.766" endtime="20211008 18:47:54.936"/>
+<status status="PASS" starttime="20211011 18:53:50.366" endtime="20211011 18:53:50.558"/>
 </test>
-<status status="PASS" starttime="20211008 18:47:54.632" endtime="20211008 18:47:54.939"/>
+<status status="PASS" starttime="20211011 18:53:50.208" endtime="20211011 18:53:50.561"/>
 </suite>
 <statistics>
 <total>
