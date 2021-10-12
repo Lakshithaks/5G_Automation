@@ -1,10 +1,11 @@
 *** Settings ***
 
 Library    os
-Resource   ${EXECDIR}/Res/attach_keyword.robot
+Resource   ${EXECDIR}/Res/5G_keyword.robot
 Variables  ${EXECDIR}/VariableFiles/config_file.py
 Library    ${EXECDIR}/Lib/attach_function.py
 Library    ${EXECDIR}/Lib/attach1.py
+Library    ${EXECDIR}/Lib/handover.py
 
 
 *** Test Cases ***
@@ -144,5 +145,14 @@ TC_attach_1.32: Registration procedures for SMS over NAS
     Unlock A Window Folder
     Copying Source Files To Destination Folder
     Reg For SMS Over NAS
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.29: Inter-NR Mobility
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Inter NR Mobility Validation
     Lock A Window Folder
     Unlock A Window Folder

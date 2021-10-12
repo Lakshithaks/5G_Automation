@@ -62,3 +62,9 @@ Reg For SMS Over NAS
 
 MIB And SIB Decode
     mib_sib
+
+Source To Destination In Handover
+    sour_des
+
+Inter NR Mobility Validation
+    nr_mobility

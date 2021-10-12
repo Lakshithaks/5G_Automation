@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-sys.path.insert(0, r"C:\Users\40014330\PycharmProjects\5G_Automation\VariableFiles")
+sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\VariableFiles")
 import shutil
 import config_file
 
