@@ -148,11 +148,47 @@ TC_attach_1.32: Registration procedures for SMS over NAS
     Lock A Window Folder
     Unlock A Window Folder
 
+TC_HO_1.1: Handover Procedures
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Handover Prepration Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.2: Xn based inter NG-RAN Handover
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Xn Based Inter RAN Handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.22: Handover counters
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Handover Counter Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
 TC_HO_1.29: Inter-NR Mobility
 
     Lock A Window Folder
     Unlock A Window Folder
     Source To Destination In Handover
     Inter NR Mobility Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.30: Intra-NR Mobility
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Intra NR Mobility Validation
     Lock A Window Folder
     Unlock A Window Folder

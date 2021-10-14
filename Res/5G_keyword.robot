@@ -63,8 +63,22 @@ Reg For SMS Over NAS
 MIB And SIB Decode
     mib_sib
 
+#Handover
+
 Source To Destination In Handover
     sour_des
 
 Inter NR Mobility Validation
-    nr_mobility
+    inter_nr_mobility
+
+Handover Prepration Validation
+    HO_prepration
+
+Xn Based Inter RAN Handover Validation
+    Xn_inter_HO
+
+Intra NR Mobility Validation
+    intra_nr_mobility
+
+Handover Counter Validation
+    HO_counters
