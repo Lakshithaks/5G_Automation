@@ -82,3 +82,18 @@ Intra NR Mobility Validation
 
 Handover Counter Validation
     HO_counters
+
+Inter NG-RAN N2 handover Validation
+    N2_inter_HO
+
+FDD Intra Frequency Handover Validation
+    FDD_intra_frequency_Handover
+
+FDD Inter Frequency Handover Validation
+    FDD_inter_frequency_Handover
+
+TDD Intra Frequency Handover Validation
+    TDD_intra_frequency_Handover
+
+TDD Inter Frequency Handover Validation
+    TDD_inter_frequency_Handover

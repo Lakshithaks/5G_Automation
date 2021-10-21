@@ -166,6 +166,51 @@ TC_HO_1.2: Xn based inter NG-RAN Handover
     Lock A Window Folder
     Unlock A Window Folder
 
+TC_HO_1.3: Inter NG-RAN N2 handover
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    Inter NG-RAN N2 handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.5: FDD intra frequency Handover in FR1 bands
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    FDD Intra Frequency Handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.6: FDD inter frequency Handover in FR1 bands
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    FDD Inter Frequency Handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.7: TDD intra frequency Handover in FR1 bands
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    TDD Intra Frequency Handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_HO_1.8: TDD inter frequency Handover in FR1 bands
+
+    Lock A Window Folder
+    Unlock A Window Folder
+    Source To Destination In Handover
+    TDD Inter Frequency Handover Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
 TC_HO_1.22: Handover counters
 
     Lock A Window Folder
