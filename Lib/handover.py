@@ -1,5 +1,9 @@
+"""
+Case name: Handover
+Author: Priyanka and Lakshitha
+How to execute testcase: robot -t "test case name" -d Report Testsuite/5G_Testsuite.robot
+"""
 import re
-import time
 import sys
 sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\VariableFiles")
 # sys.path.append("/VariableFiles")
@@ -7,12 +11,12 @@ import config_file
 import shutil
 
 class handover:
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'    # setting library scope as global
 
     def __init__(self):
         pass
 
-    def sour_des(self):
+    def sour_des(self):   # Moving files from source to destination
 
         source = [config_file.hanue_spath, config_file.Tdu_spath, config_file.Sdu_spath, config_file.gnbcu_spath,
                   config_file.Sgnb_spath, config_file.Tgnb_spath, config_file.amf_spath, config_file.HO_smf_spath,
@@ -54,7 +58,7 @@ class handover:
         dest23 = shutil.move(source[9], destination[4])
         print("Successfully moved the files")
 
-    def inter_nr_mobility(self):
+    def inter_nr_mobility(self):   # Inter NR mobility testcase validation
         matchingStr = "HO_inter.*"
         path = [config_file.Sdu_pathd2, config_file.Tdu_pathd2, config_file.gnbcu_pathd1, config_file.hanue_pathd1,
                 config_file.Sdu_pathd1, config_file.Tdu_pathd1, config_file.gnbcu_pathd2]
@@ -68,7 +72,7 @@ class handover:
             print(res)
         print("*** Inter-gNB-DU Mobility handover is successful and data working in both UL & DL direction ***")
 
-    def HO_prepration(self):
+    def HO_prepration(self):  # Handover prepration testcase validation
         matchingStr = "HO_Prep.*"
         path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2]
         new_list = []
@@ -81,7 +85,7 @@ class handover:
             print(res)
         print("*** Handover procedures verified successfully ***")
 
-    def Xn_inter_HO(self):
+    def Xn_inter_HO(self):  # Xn based handover testcase validation
         matchingStr = "Xn_inter_HO.*"
         path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2,
                 config_file.hanue_npathd3, config_file.hanue_npathd4, config_file.Tgnb_pathd2, config_file.Tgnb_pathd3,
@@ -97,7 +101,7 @@ class handover:
             print(res)
         print("*** Xn based inter NG-RAN handover is successful ***")
 
-    def intra_nr_mobility(self):
+    def intra_nr_mobility(self):  # Intra NR mobility handover teastcase validation
         matchingStr = "HO_intra.*"
         path = [config_file.Sdu_pathd2, config_file.Tdu_pathd2, config_file.gnbcu_pathd1, config_file.hanue_pathd1,
                 config_file.Sdu_pathd1, config_file.Tdu_pathd1, config_file.gnbcu_pathd2]
@@ -112,7 +116,7 @@ class handover:
         print("*** gNB-CU provides new UL GTP TEID to the gNB-DU and gNB-DU provides new DL GTP TEID to the gNB-CU ***")
         print("*** Intra-gNB-DU Mobility handover is successful and data working in both UL & DL direction ***")
 
-    def HO_counters(self):
+    def HO_counters(self):  # handover counters testcase validation
         matchingStr = "HO_counters.*"
         path = [config_file.Tgnb_pathd3, config_file.Sgnb_pathd3, config_file.hanue_npathd4, config_file.Tdu_pathd2]
         new_list = []
@@ -125,7 +129,7 @@ class handover:
             print(res)
         print("*** source and target gNB counters for Xn handover are verified ***")
 
-    def FDD_intra_frequency_Handover(self):
+    def FDD_intra_frequency_Handover(self):  # FDD intra freq HO for FR1  bands testcase validation
         matchingStr = "FDD_intrafreq_FR1.*"
         path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2,
                 config_file.hanue_npathd3, config_file.hanue_npathd4, config_file.Tgnb_pathd2, config_file.Tgnb_pathd3,
@@ -141,7 +145,7 @@ class handover:
             print(res)
         print("***  FDD Intra frequency handover over Xn interface between two cells of FR1 band is successful ***")
 
-    def FDD_inter_frequency_Handover(self):
+    def FDD_inter_frequency_Handover(self):  # FDD inter freq HO for FR1  bands testcase validation
         matchingStr = "FDD_interfreq_FR1.*"
         path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2,
                 config_file.hanue_npathd3, config_file.hanue_npathd4, config_file.Tgnb_pathd2, config_file.Tgnb_pathd3,
@@ -157,7 +161,7 @@ class handover:
             print(res)
         print("***  FDD Inter frequency handover over Xn interface between two cells of FR1 band is successful ***")
 
-    def TDD_intra_frequency_Handover(self):
+    def TDD_intra_frequency_Handover(self):   # TDD intra freq HO for FR1  bands testcase validation
         matchingStr = "TDD_intrafreq_FR1.*"
         path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2,
                 config_file.hanue_npathd3, config_file.hanue_npathd4, config_file.Tgnb_pathd2, config_file.Tgnb_pathd3,
@@ -173,7 +177,7 @@ class handover:
             print(res)
         print("***  TDD Intra frequency handover over Xn interface between two cells of FR1 band is successful ***")
 
-    def TDD_inter_frequency_Handover(self):
+    def TDD_inter_frequency_Handover(self):  # TDD inter freq HO for FR1  bands testcase validation
             matchingStr = "TDD_interfreq_FR1.*"
             path = [config_file.Tgnb_pathd1, config_file.Sgnb_pathd1, config_file.amf_pathd1, config_file.amf_pathd2,
                     config_file.hanue_npathd3, config_file.hanue_npathd4, config_file.Tgnb_pathd2,
@@ -189,7 +193,7 @@ class handover:
                 print(res)
             print("***  TDD Inter frequency handover over Xn interface between two cells of FR1 band is successful ***")
 
-    def N2_inter_HO(self):
+    def N2_inter_HO(self):  # N2 based handover testcase validation
         matchingStr = "N2_inter_HO.*"
         path = [config_file.amf_pathd2, config_file.HO_Tamf_pathd1, config_file.HO_Tsmf_pathd1,
                 config_file.HO_smf_pathd2, config_file.HO_Tsmf_pathd2, config_file.HO_smf_pathd3]
@@ -203,15 +207,15 @@ class handover:
             print(res)
         print("*** NG-RAN N2 based handover without Xn interface is successful ***")
 
-#class_instance = handover()
-#class_instance.sour_des()
+# class_instance = handover()
+# class_instance.sour_des()
 # class_instance.inter_nr_mobility()
 # class_instance.HO_prepration()
 # class_instance.Xn_inter_HO()
 # class_instance.intra_nr_mobility()
-#class_instance.HO_counters()
-#class_instance.FDD_intra_frequency_Handover()
-#class_instance.FDD_inter_frequency_Handover()
-#class_instance.TDD_intra_frequency_Handover()
-#class_instance.TDD_inter_frequency_Handover()
-#class_instance.N2_inter_HO()
+# class_instance.HO_counters()
+# class_instance.FDD_intra_frequency_Handover()
+# class_instance.FDD_inter_frequency_Handover()
+# class_instance.TDD_intra_frequency_Handover()
+# class_instance.TDD_inter_frequency_Handover()
+# class_instance.N2_inter_HO()

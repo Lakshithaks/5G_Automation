@@ -1,3 +1,8 @@
+"""
+Author: Priyanka and Lakshitha
+How to execute testcase: robot -t "test case name" -d Report Testsuite/5G_Testsuite.robot
+"""
+
 *** Settings ***
 
 Library    os
@@ -6,6 +11,7 @@ Variables  ${EXECDIR}/VariableFiles/config_file.py
 Library    ${EXECDIR}/Lib/attach_function.py
 Library    ${EXECDIR}/Lib/attach1.py
 Library    ${EXECDIR}/Lib/handover.py
+Library    ${EXECDIR}/Lib/Ran.py
 
 
 *** Test Cases ***
@@ -237,3 +243,111 @@ TC_HO_1.30: Intra-NR Mobility
     Intra NR Mobility Validation
     Lock A Window Folder
     Unlock A Window Folder
+
+#RAN
+TC_F1_1.1: F1 Setup and NG Setup to activate cell in gNB-DU
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 and NG Setup in gNB-DU Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.2: F1 Setup Procedure Failure Operations
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 Setup Procedure Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.3: F1 Setup Removal Procedure gNB DU Request Successfully Operations
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 Setup Removal(gNB DU) Successful Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.4: F1 Setup Removal Procedure gNB DU Request Failure Operations
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 Setup Removal(gNB DU) Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.5: F1 Setup Removal Procedure gNB CU Request Successfully Operations
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 Setup Removal(gNB CU) Successful Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.6: F1 Setup Removal Procedure gNB CU Request Failure Operations
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    F1 Setup Removal(gNB CU) Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.7: GNB-DU Configuration Update Procedure Successful operation
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    GNB-DU Configuration Update Successful Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.8: GNB-DU Configuration Update Procedure Failure operation
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    GNB-DU Configuration Update Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.9: GNB-CU Configuration Update Procedure Successful operation
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    GNB-CU Configuration Update Successful Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.10: GNB-CU Configuration Update Procedure Failure operation
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    GNB-CU Configuration Update Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.11: UE context setup success procedure
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    UE Context Setup Success Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+TC_F1_1.12: UE context setup failure procedure
+
+    Unlock A Window Folder
+    Source To Destination In RAN
+    UE Context Setup Failure Validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+
+TC_F1_1.13: UE context release request gnb-du intiated
+
+    Unlock A Window Folder
+    UE Context release (DU) validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
+
+

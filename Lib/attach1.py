@@ -1,4 +1,8 @@
-import os
+"""
+Case name: Attach
+Author: Priyanka and Lakshitha
+How to execute testcase: robot -t "test case name" -d Report Testsuite/5G_Testsuite.robot
+"""
 import re
 import sys
 sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\VariableFiles")
@@ -7,12 +11,12 @@ import config_file
 
 class attach1:
 
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'    # setting library scope as global
 
     def __init__(self):
         pass
 
-    def copy_file(self):
+    def copy_file(self):  # Moving files from source to destination
 
         source = [config_file.cp_path, config_file.up_path, config_file.du_path, config_file.me_path, config_file.path1,
                   config_file.path2, config_file.new_amf_spath, config_file.old_amf_spath, config_file.ausf_spath,
@@ -66,7 +70,7 @@ class attach1:
         dest37 = shutil.move(source[9], destination[14])
         print("Source files has been successfully copied to destination folder!!")
 
-    def b_release_val(self):
+    def b_release_val(self):  # Bearer context release testcase validation
 
         matchingStr = "release.*"
         path = [config_file.up2_path, config_file.cp2_path, config_file.cp3_path, config_file.du2_path, config_file.cp4_path]
@@ -80,7 +84,7 @@ class attach1:
             print(res)
         print("*** Bearer context release procedure is performed ***")
 
-    def b_setup_val(self):
+    def b_setup_val(self):    # Bearer context setup testcase validation
 
         print("Successfully validated rach procedure")
         matchingStr = "setup.*"
@@ -95,7 +99,7 @@ class attach1:
             print(res)
         print("*** successfully verified UL and DL data transfer ***")
 
-    def int_reg_val(self):
+    def int_reg_val(self):   #  initial registration testcase validation
         print("Powered On the UE with correct HNI SIM card and Validated Rach procedure")
         matchingStr = "inreg.*"
         path = [config_file.path3, config_file.new_amf_pathd3, config_file.old_amf_pathd1, config_file.new_amf_pathd5,
@@ -114,7 +118,7 @@ class attach1:
             print(res)
         print("*** Initial registration is successful ***")
 
-    def crct_hni_val(self):
+    def crct_hni_val(self):   # Registration with correct HNI testcase validation
         print("*** RACH procedure is successfully validated ***")
         matchingStr = "_crct_hni.*"
         path = [config_file.ue_pathd1, config_file.new_amf_pathd9, config_file.ausf_pathd1, config_file.udm_pathd1,
@@ -129,7 +133,7 @@ class attach1:
             print(res)
         print("*** Initial registration is successful due to correct HNI ***")
 
-    def dereg_val(self):
+    def dereg_val(self):   # Deregistration testcase validation
 
         print("Switched off the UE or Turned on Aeroplane mode")
         matchingStr = "dereg.*"
@@ -146,7 +150,7 @@ class attach1:
             print(res)
         print("*** Successfully performed the ue initiated deregistration ***")
 
-    def net_dereg_val(self):
+    def net_dereg_val(self):   # network initiated deregistration validation
 
         print("UE is in idle or connected mode")
         matchingStr = "nid.*"
@@ -163,7 +167,7 @@ class attach1:
             print(res)
         print("*** Successfully performed the network initiated deregistration ***")
 
-    def incrct_hni_val(self):
+    def incrct_hni_val(self):   # Registration with incorrect HNI testcase validation
         matchingStr = "incrct_hni.*"
         path = [config_file.new_amf_pathd3, config_file.old_amf_pathd1, config_file.new_amf_pathd5,
                  config_file.ue_pathd1, config_file.new_amf_pathd9, config_file.ausf_pathd1, config_file.udm_pathd1]
@@ -177,7 +181,7 @@ class attach1:
             print(res)
         print("*** Initial registration is not successful due to incorrect HNI ***")
 
-    def reg_sms_nas(self):
+    def reg_sms_nas(self):   # registration procedure for sms testcase validation
 
         print("Power On the UE with correct HNI SIM card")
         matchingStr = "sms_nas.*"

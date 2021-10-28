@@ -1,3 +1,8 @@
+"""
+Author: Priyanka and Lakshitha
+How to execute testcase: robot -t "test case name" -d Report Testsuite/5G_Testsuite.robot
+"""
+
 *** Settings ***
 
 
@@ -97,3 +102,49 @@ TDD Intra Frequency Handover Validation
 
 TDD Inter Frequency Handover Validation
     TDD_inter_frequency_Handover
+
+#RAN
+
+Source To Destination In RAN
+    mov_ran_files
+
+F1 and NG Setup in gNB-DU Validation
+    F1_NG_Setup
+
+F1 Setup Procedure Failure Validation
+    F1_Set_Fail
+
+F1 Setup Removal(gNB DU) Successful Validation
+    F1_Set_DU_Removal_Suc
+
+F1 Setup Removal(gNB DU) Failure Validation
+    F1_Set_DU_Removal_Fail
+
+F1 Setup Removal(gNB CU) Successful Validation
+    F1_Set_CU_Removal_Suc
+
+F1 Setup Removal(gNB CU) Failure Validation
+    F1_Set_CU_Removal_Fail
+
+GNB-DU Configuration Update Successful Validation
+    DU_Con_Update_Suc
+
+GNB-DU Configuration Update Failure Validation
+    DU_Con_Update_Fail
+
+GNB-CU Configuration Update Successful Validation
+    CU_Con_Update_Suc
+
+GNB-CU Configuration Update Failure Validation
+    CU_Con_Update_Fail
+
+UE Context Setup Success Validation
+    UE_con_setup_success
+
+UE Context Setup Failure Validation
+    UE_con_setup_failure
+
+UE Context release (DU) validation
+    UE_context_release_request_DU_intiated
+    mov_ran_files
+    UE_con_rel_DU

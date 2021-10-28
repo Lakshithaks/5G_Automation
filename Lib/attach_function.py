@@ -1,21 +1,25 @@
+"""
+Case name: Attach
+Author: Lakshitha and Priyanka
+How to execute testcase: robot -t "test case name" -d Report Testsuite/5G_Testsuite.robot
+"""
 import os
 import re
-import time
 import sys
-sys.path.insert(0, r"C:\Users\Admin\PycharmProjects\5G_Automation\VariableFiles")
+sys.path.insert(0, r"C:\Users\40014330\PycharmProjects\5G_Automation\VariableFiles")
 #sys.path.append("/VariableFiles")
 import config_file
 import shutil
 
 class attach_function:
 
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'  # setting library scope as global
 
     def __init__(self):
         pass
 
-    def unlock(self):#Unlock the folder
-        
+    def unlock(self):  # Function to Unlock the folder
+
         pw = config_file.pw
         pw1 = config_file.pw1
         if pw1 == pw:
@@ -36,7 +40,7 @@ class attach_function:
         else:
             print("wrong password! Try again later")
 
-    def copy_gnb_ue(self):
+    def copy_gnb_ue(self):  # Moving files from source to destination
 
         source = [config_file.path1, config_file.path2]
         destination = [config_file.gnb_npath, config_file.ue_npath]
@@ -46,9 +50,9 @@ class attach_function:
         dest2 = shutil.move(source[1], destination[1])
         print("Successfully moved the file")
 
-    def rach_val(self):
-        matchingStr = "rach.*"
-        path = [config_file.path3, config_file.path4]
+    def rach_val(self):  # RACH testcase validation
+        matchingStr = "rach.*"  # validation string
+        path = [config_file.path3, config_file.path4]  # validation paths
         new_list = []
         for file in path:
             fh = open(file, "r").read()
@@ -59,7 +63,7 @@ class attach_function:
             print(res)
         print("*** Rach procedure and RRC setup are successful ***")
 
-    def eps_val(self):
+    def eps_val(self):  # EPS/IMSI registration testcase validation
         matchingStr = "eps.*"
         path = [config_file.path3, config_file.path4]
         new_list = []
@@ -72,7 +76,7 @@ class attach_function:
             print(res)
         print("Combined EPS/IMSI Registration is successful")
 
-    def apn_val(self):
+    def apn_val(self):  # incorrect APN name validation
         matchingStr = "apn.*"
         path = [config_file.path3, config_file.path4]
         new_list = []
@@ -85,7 +89,7 @@ class attach_function:
             print(res)
         print(" Registration Reject with incorrect configured APN")
 
-    def srb_val(self):
+    def srb_val(self):  # srb setup procedure testcase validation
         print("Successfully validated rach procedure")
         matchingStr = "srb.*"
         path = [config_file.path3, config_file.path4]
@@ -99,7 +103,7 @@ class attach_function:
             print(res)
         print("SRB1 is established successfully ")
 
-    def barred_val(self):
+    def barred_val(self):  # cell barred testcase validation
         matchingStr = "barred.*"
         path = [config_file.path3, config_file.path4]
         new_list = []
@@ -110,12 +114,12 @@ class attach_function:
         final_new_res = list(set(new_list))
         for res in final_new_res:
             print(res)
-            
-    def AM_to_NM(self):
+
+    def AM_to_NM(self):  # Aeroplane mode to normal mode validation
         print("*** RACH procedure is successfully verified ***")
         print("*** Registration is successful after aeroplane mode toggled in UE ***")
 
-    def mib_sib(self):
+    def mib_sib(self):  # MIB & SIB decoding validation
         matchingStr = "mib_sib.*"
         path = [config_file.path3, config_file.path4]
         new_list = []
@@ -128,31 +132,7 @@ class attach_function:
             print(res)
         print("*** Verified Rach, Initial Registration and MIB and SIB are decoded successfully ***")
 
-    def delete(self):
-
-        f1 = open(config_file.path3, 'r')
-        f2 = open(config_file.path4, 'r')
-
-        a = [config_file.message_1, config_file.message_3]#config_file.message_5, config_file.message_7
-        b = [config_file.message_2, config_file.message_4] #config_file.message_6, config_file.message_8
-        lst = []
-        for line in f1 and f2:
-            for word in a and b:
-                if word in line:
-                    line = line.replace(word, '')
-            lst.append(line)
-        f1.close()
-        f2.close()
-        f1 = open(config_file.path3, 'w')
-        f2 = open(config_file.path4, 'w')
-        for line in lst:
-            f1.write(line)
-            f2.write(line)
-        print("Messages has been successfully deleted")
-        f1.close()
-        f2.close()
-
-    def lock(self):      #lock the folder
+    def lock(self):  # lock the folder
 
         p_w = config_file.pw
         pw1 = config_file.pw1
@@ -164,7 +144,7 @@ class attach_function:
                 os.rename("Locker", "Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
                 os.popen('attrib +h +s +r Locker.{645ff040-5081-101b-9f08-00aa002f954e}')
                 print("Locker folder has been successfully locked")
-                
+
             else:
                 os.path.exists("Locker.{645ff040-5081-101b-9f08-00aa002f954e}")
                 os.mkdir("Locker")
@@ -176,15 +156,14 @@ class attach_function:
         else:
             print("wrong password! Try again later")
 
-
-#class_instance = attach_function()
-#class_instance.unlock()
-#class_instance.copy_gnb_ue()
-#class_instance.rach_val()
-#class_instance.eps_val()
-#class_instance.apn_val()
-#class_instance.srb_val()
-#class_instance.barred_val()
+# class_instance = attach_function()
+# class_instance.unlock()
+# class_instance.copy_gnb_ue()
+# class_instance.rach_val()
+# class_instance.eps_val()
+# class_instance.apn_val()
+# class_instance.srb_val()
+# class_instance.barred_val()
 # class_instance.delete()
-#class_instance.lock()
-#class_instance.AM_to_NM()
+# class_instance.lock()
+# class_instance.AM_to_NM()

@@ -1,66 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211021 13:12:12.351" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211028 13:42:54.417" rpa="false" schemaversion="2">
 <suite id="s1" name="5G Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\5G_Testsuite.robot">
-<test id="s1-t1" name="TC_HO_1.1: Handover Procedures">
-<kw name="Lock A Window Folder" library="5G_keyword">
-<kw name="Lock" library="attach_function">
-<msg timestamp="20211021 13:12:12.576" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211021 13:12:12.560" endtime="20211021 13:12:12.576"/>
-</kw>
-<status status="PASS" starttime="20211021 13:12:12.560" endtime="20211021 13:12:12.576"/>
-</kw>
+<test id="s1-t1" name="TC_F1_1.13: UE context release request gnb-du intiated">
 <kw name="Unlock A Window Folder" library="5G_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211021 13:12:12.589" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211021 13:12:12.579" endtime="20211021 13:12:12.590"/>
+<msg timestamp="20211028 13:42:54.730" level="INFO">Locker folder is not LOCKED</msg>
+<status status="PASS" starttime="20211028 13:42:54.729" endtime="20211028 13:42:54.730"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.578" endtime="20211021 13:12:12.590"/>
+<status status="PASS" starttime="20211028 13:42:54.729" endtime="20211028 13:42:54.730"/>
 </kw>
-<kw name="Source To Destination In Handover" library="5G_keyword">
-<kw name="Sour Des" library="handover">
-<msg timestamp="20211021 13:12:12.858" level="INFO">Successfully moved the files</msg>
-<status status="PASS" starttime="20211021 13:12:12.592" endtime="20211021 13:12:12.858"/>
+<kw name="UE Context release (DU) validation" library="5G_keyword">
+<kw name="UE Context Release Request DU Intiated" library="Ran">
+<status status="PASS" starttime="20211028 13:42:54.732" endtime="20211028 13:42:54.761"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.591" endtime="20211021 13:12:12.858"/>
+<kw name="Mov Ran Files" library="Ran">
+<status status="PASS" starttime="20211028 13:42:54.762" endtime="20211028 13:42:54.809"/>
 </kw>
-<kw name="Handover Prepration Validation" library="5G_keyword">
-<kw name="HO Prepration" library="handover">
-<msg timestamp="20211021 13:12:12.869" level="INFO">HO_Prep-HANDOVER REQUIRED (handover Preparation)
-HO_Prep-PATH SWITCH REQUEST ACKNOWLEDGE (Path Switch Request)
-HO_Prep-UPLINK RAN STATUS TRANSFER (Uplink RAN Status Transfer)
-HO_Prep-HANDOVER REQUEST ACKNOWLEDGE (Handover Resource Allocation)
-HO_Prep-PATH SWITCH REQUEST (Path Switch Request)
-HO_Prep-HANDOVER COMMAND (handover Preparation)
-HO_Prep-UPLINK RAN STATUS TRANSFER (SN Status Transfer)
-HO_Prep-HANDOVER REQUEST (Handover Resource Allocation)
-HO_Prep-UE INFORMATION TRANSFER (Retrieve UE Context)
-HO_Prep-HANDOVER NOTIFY (Handover Notification)
-HO_Prep-DOWNLINK RAN STATUS TRANSFER (Downlink RAN Status Transfer)
-HO_Prep-HANDOVER CANCEL ACKNOWLEDGE (Handover Cancellation)
-HO_Prep-HANDOVER REQUIRED (Handover Cancellation)
-HO_Prep-DOWNLINK RAN STATUS TRANSFER (SN Status Transfer)
-*** Handover procedures verified successfully ***</msg>
-<status status="PASS" starttime="20211021 13:12:12.867" endtime="20211021 13:12:12.869"/>
+<kw name="UE Con Rel DU" library="Ran">
+<msg timestamp="20211028 13:42:54.811" level="INFO">UE_con_rel_req_du_inti-UE CONTEXT RELEASE REQUEST {'Message_Type': 1, 'gNB_CU_UE_F1AP_ID': 5, 'gNB_DU_UE_F1AP_ID': 4, 'Cause': 'Unknown'}
+*** Verified the UE CONTEXT SETUP failure ***</msg>
+<status status="PASS" starttime="20211028 13:42:54.809" endtime="20211028 13:42:54.811"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.864" endtime="20211021 13:12:12.869"/>
+<status status="PASS" starttime="20211028 13:42:54.731" endtime="20211028 13:42:54.811"/>
 </kw>
 <kw name="Lock A Window Folder" library="5G_keyword">
 <kw name="Lock" library="attach_function">
-<msg timestamp="20211021 13:12:12.894" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211021 13:12:12.875" endtime="20211021 13:12:12.894"/>
+<msg timestamp="20211028 13:42:54.834" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211028 13:42:54.813" endtime="20211028 13:42:54.834"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.873" endtime="20211021 13:12:12.894"/>
+<status status="PASS" starttime="20211028 13:42:54.812" endtime="20211028 13:42:54.834"/>
 </kw>
 <kw name="Unlock A Window Folder" library="5G_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211021 13:12:12.931" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211021 13:12:12.900" endtime="20211021 13:12:12.934"/>
+<msg timestamp="20211028 13:42:54.859" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211028 13:42:54.836" endtime="20211028 13:42:54.859"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.898" endtime="20211021 13:12:12.935"/>
+<status status="PASS" starttime="20211028 13:42:54.835" endtime="20211028 13:42:54.860"/>
 </kw>
-<status status="PASS" starttime="20211021 13:12:12.559" endtime="20211021 13:12:12.938"/>
+<status status="PASS" starttime="20211028 13:42:54.728" endtime="20211028 13:42:54.864"/>
 </test>
-<status status="PASS" starttime="20211021 13:12:12.377" endtime="20211021 13:12:12.942"/>
+<status status="PASS" starttime="20211028 13:42:54.549" endtime="20211028 13:42:54.868"/>
 </suite>
 <statistics>
 <total>
