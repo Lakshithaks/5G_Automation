@@ -349,5 +349,12 @@ TC_F1_1.13: UE context release request gnb-du intiated
     Lock A Window Folder
     Unlock A Window Folder
 
+TC_F1_1.14: UE context release request gnb-cu intiated
+
+    Unlock A Window Folder
+    UE Context release (CU) validation
+    Lock A Window Folder
+    Unlock A Window Folder
+
 
 

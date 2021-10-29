@@ -20,6 +20,14 @@ class Ran:
        with open(config_file.du_spath,"a") as data:
            data.write("\nUE_con_rel_req_du_inti-UE CONTEXT RELEASE REQUEST "+str(IE_1))
 
+    def UE_context_release_request_CU_intiated(self):  # Passing messages of this testcase to file
+        IE_1 = {"Message_Type": 1, "gNB_CU_UE_F1AP_ID": 5, "gNB_DU_UE_F1AP_ID": 4, "Cause": "Unknown"}
+        IE_2 = {"Message_Type": 1, "gNB_CU_UE_F1AP_ID": 5, "gNB_DU_UE_F1AP_ID": 4}
+        with open(config_file.cu_spath, "a") as data:
+            data.write("\nUE_con_rel_req_cu_inti-UE CONTEXT RELEASE COMMAND " + str(IE_1))
+        with open(config_file.du_spath, "a") as data:
+            data.write("\nUE_con_rel_req_cu_inti-UE CONTEXT RELEASE COMPLETE " + str(IE_2))
+
     def mov_ran_files(self):    # Moving files from source to destination
         source = [config_file.du_spath, config_file.cu_spath, config_file.cn_spath, config_file.ran_gnb_spath]
         destination = [config_file.cn_npath, config_file.cu_npath, config_file.du_npath, config_file.ran_gnb_npath]
@@ -201,7 +209,20 @@ class Ran:
         final_new_res = list(set(new_list))
         for res in final_new_res:
             print(res)
-        print("*** Verified the UE CONTEXT SETUP failure ***")
+        print("*** Verified the UE CONTEXT RELEASE (DU) Successfully ***")
+
+    def UE_con_rel_CU(self):   # UE Context release(DU) testcase validation
+        matchingStr = "UE_con_rel_req_cu_inti.*"
+        path = [config_file.du_pathd1, config_file.cu_pathd1]
+        new_list = []
+        for file in path:
+            fh = open(file, "r").read()
+            for line in re.findall(matchingStr, fh):
+                new_list.append(line)
+        final_new_res = list(set(new_list))
+        for res in final_new_res:
+            print(res)
+        print("*** Verified the UE CONTEXT RELEASE (CU) Successfully ***")
 
 
 # class_instance = Ran()

@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211028 13:42:54.417" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.8.5 on win32)" generated="20211029 15:24:28.498" rpa="false" schemaversion="2">
 <suite id="s1" name="5G Testsuite" source="C:\Users\Admin\PycharmProjects\5G_Automation\Testsuite\5G_Testsuite.robot">
-<test id="s1-t1" name="TC_F1_1.13: UE context release request gnb-du intiated">
+<test id="s1-t1" name="TC_F1_1.14: UE context release request gnb-cu intiated">
 <kw name="Unlock A Window Folder" library="5G_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211028 13:42:54.730" level="INFO">Locker folder is not LOCKED</msg>
-<status status="PASS" starttime="20211028 13:42:54.729" endtime="20211028 13:42:54.730"/>
+<msg timestamp="20211029 15:24:29.295" level="INFO">Locker folder is not LOCKED</msg>
+<status status="PASS" starttime="20211029 15:24:29.250" endtime="20211029 15:24:29.295"/>
 </kw>
-<status status="PASS" starttime="20211028 13:42:54.729" endtime="20211028 13:42:54.730"/>
+<status status="PASS" starttime="20211029 15:24:29.249" endtime="20211029 15:24:29.296"/>
 </kw>
-<kw name="UE Context release (DU) validation" library="5G_keyword">
-<kw name="UE Context Release Request DU Intiated" library="Ran">
-<status status="PASS" starttime="20211028 13:42:54.732" endtime="20211028 13:42:54.761"/>
+<kw name="UE Context release (CU) validation" library="5G_keyword">
+<kw name="UE Context Release Request CU Intiated" library="Ran">
+<status status="PASS" starttime="20211029 15:24:29.297" endtime="20211029 15:24:29.318"/>
 </kw>
 <kw name="Mov Ran Files" library="Ran">
-<status status="PASS" starttime="20211028 13:42:54.762" endtime="20211028 13:42:54.809"/>
+<status status="PASS" starttime="20211029 15:24:29.319" endtime="20211029 15:24:29.376"/>
 </kw>
-<kw name="UE Con Rel DU" library="Ran">
-<msg timestamp="20211028 13:42:54.811" level="INFO">UE_con_rel_req_du_inti-UE CONTEXT RELEASE REQUEST {'Message_Type': 1, 'gNB_CU_UE_F1AP_ID': 5, 'gNB_DU_UE_F1AP_ID': 4, 'Cause': 'Unknown'}
-*** Verified the UE CONTEXT SETUP failure ***</msg>
-<status status="PASS" starttime="20211028 13:42:54.809" endtime="20211028 13:42:54.811"/>
+<kw name="UE Con Rel CU" library="Ran">
+<msg timestamp="20211029 15:24:29.379" level="INFO">UE_con_rel_req_cu_inti-UE CONTEXT RELEASE COMPLETE {'Message_Type': 1, 'gNB_CU_UE_F1AP_ID': 5, 'gNB_DU_UE_F1AP_ID': 4}
+UE_con_rel_req_cu_inti-UE CONTEXT RELEASE COMMAND {'Message_Type': 1, 'gNB_CU_UE_F1AP_ID': 5, 'gNB_DU_UE_F1AP_ID': 4, 'Cause': 'Unknown'}
+*** Verified the UE CONTEXT RELEASE (CU) Successfully ***</msg>
+<status status="PASS" starttime="20211029 15:24:29.376" endtime="20211029 15:24:29.379"/>
 </kw>
-<status status="PASS" starttime="20211028 13:42:54.731" endtime="20211028 13:42:54.811"/>
+<status status="PASS" starttime="20211029 15:24:29.296" endtime="20211029 15:24:29.379"/>
 </kw>
 <kw name="Lock A Window Folder" library="5G_keyword">
 <kw name="Lock" library="attach_function">
-<msg timestamp="20211028 13:42:54.834" level="INFO">Locker folder has been successfully locked</msg>
-<status status="PASS" starttime="20211028 13:42:54.813" endtime="20211028 13:42:54.834"/>
+<msg timestamp="20211029 15:24:29.499" level="INFO">Locker folder has been successfully locked</msg>
+<status status="PASS" starttime="20211029 15:24:29.381" endtime="20211029 15:24:29.499"/>
 </kw>
-<status status="PASS" starttime="20211028 13:42:54.812" endtime="20211028 13:42:54.834"/>
+<status status="PASS" starttime="20211029 15:24:29.380" endtime="20211029 15:24:29.500"/>
 </kw>
 <kw name="Unlock A Window Folder" library="5G_keyword">
 <kw name="Unlock" library="attach_function">
-<msg timestamp="20211028 13:42:54.859" level="INFO">Locker Folder has been Successfully Unlocked</msg>
-<status status="PASS" starttime="20211028 13:42:54.836" endtime="20211028 13:42:54.859"/>
+<msg timestamp="20211029 15:24:29.622" level="INFO">Locker Folder has been Successfully Unlocked</msg>
+<status status="PASS" starttime="20211029 15:24:29.502" endtime="20211029 15:24:29.623"/>
 </kw>
-<status status="PASS" starttime="20211028 13:42:54.835" endtime="20211028 13:42:54.860"/>
+<status status="PASS" starttime="20211029 15:24:29.501" endtime="20211029 15:24:29.624"/>
 </kw>
-<status status="PASS" starttime="20211028 13:42:54.728" endtime="20211028 13:42:54.864"/>
+<status status="PASS" starttime="20211029 15:24:29.247" endtime="20211029 15:24:29.631"/>
 </test>
-<status status="PASS" starttime="20211028 13:42:54.549" endtime="20211028 13:42:54.868"/>
+<status status="PASS" starttime="20211029 15:24:28.510" endtime="20211029 15:24:29.634"/>
 </suite>
 <statistics>
 <total>

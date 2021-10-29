@@ -148,3 +148,8 @@ UE Context release (DU) validation
     UE_context_release_request_DU_intiated
     mov_ran_files
     UE_con_rel_DU
+
+UE Context release (CU) validation
+    UE_context_release_request_CU_intiated
+    mov_ran_files
+    UE_con_rel_CU
